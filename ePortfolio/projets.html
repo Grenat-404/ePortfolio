@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - ePortfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container9">
+            <h1>Mes Projets</h1>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="diplomes.html">Diplômes</a></li>
+            <li><a href="experiences.html">Expériences professionnelles</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-container">
+        <input type="text" placeholder="Rechercher" id="searchInput">
+        <select id="yearFilter">
+            <option value="">Toutes les années</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+        </select>
+        <select id="categoryFilter">
+            <option value="">Toutes les catégories</option>
+            <option value="Programmation">Programmation</option>
+            <option value="Développement Web">Développement Web</option>
+            <option value="Multi">Multi</option>
+        </select>
+        <button id="resetButton">Réinitialiser</button>
+    </div>
+
+    <main>
+        <div class="card-container">
+            <a href="Proj_CV.html" class="card" data-annee="2023" data-categorie="Développement Web">
+                <img src="Images/CV_flou.png" alt="Site web Curriculum Vitae">
+                <h2>Site web Curriculum Vitae</h2>
+                <p>Développement Web<span class="marge"><span class="marge"><span
+                                class="marge">2023</span></span></span></p>
+            </a>
+            <a href="Proj_cam.html" class="card" data-annee="2025" data-categorie="Programmation">
+                <img src="Images/Proj_cam.png" alt="Outil de traitement de données">
+                <h2>Outil de traitement de données</h2>
+                <p>Programmation<span class="marge"><span class="marge"><span class="marge">2025</span></span></span>
+                </p>
+            </a>
+            <a href="Proj_baie.html" class="card" data-annee="2024" data-categorie="Multi">
+                <img src="Images/Proj_baie.jpg" alt="Dispositif de transmission">
+                <h2>Dispositif de transmission</h2>
+                <p>Multi<span class="marge"><span class="marge"><span class="marge">2024</span></span></span></p>
+            </a>
+            <a href="page3.html" class="card" data-annee="2024" data-categorie="Développement Web">
+                <img src="image3.jpg" alt="Site web Notation de film">
+                <h2>Site web Notation de film</h2>
+                <p>Développement Web<span class="marge"><span class="marge"><span
+                                class="marge">2024</span></span></span></p>
+            </a>
+            <a href="page3.html" class="card" data-annee="2023" data-categorie="Programmation">
+                <img src="image3.jpg" alt="Programme Code César">
+                <h2>Programme Code César</h2>
+                <p>Programmation<span class="marge"><span class="marge"><span class="marge">2024</span></span></span>
+                </p>
+            </a>
+            <a href="page3.html" class="card" data-annee="2023" data-categorie="Programmation">
+                <img src="image3.jpg" alt="Programme Roulette Française">
+                <h2>Programme Roulette Française</h2>
+                <p>Programmation<span class="marge"><span class="marge"><span class="marge">2023</span></span></span>
+                </p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="A propos.html">À propos</a>
+                <a href="Contact.html">Contact</a>
+                <a href="Confidentialite.html">Politique de confidentialité</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/votre_profil" target="_blank" title="Instagram">
+                    <img src="Images/logo-insta.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/votre_profil" target="_blank" title="LinkedIn">
+                    <img src="Images/logo-linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/Grenat-404/SAE.CV" target="_blank" title="Github">
+                    <img src="Images/logo-github.png" alt="Github">
+                </a>
+            </div>
+            <p>&copy; 2024 - DEJOIE Matthieu. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const yearFilter = document.getElementById("yearFilter");
+        const categoryFilter = document.getElementById("categoryFilter");
+        const resetButton = document.getElementById("resetButton");
+        const cards = document.querySelectorAll(".card");
+
+        function filterCards() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedYear = yearFilter.value;
+            const selectedCategory = categoryFilter.value;
+
+            cards.forEach(card => {
+                const title = card.querySelector("h2").textContent.toLowerCase();
+                const annee = card.dataset.annee;
+                const categorie = card.dataset.categorie;
+
+                const matchesSearch = title.includes(searchTerm);
+                const matchesYear = selectedYear === "" || annee === selectedYear;
+                const matchesCategory = selectedCategory === "" || categorie === selectedCategory;
+
+                if (matchesSearch && matchesYear && matchesCategory) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        function resetFilters() {
+            searchInput.value = "";
+            yearFilter.value = "";
+            categoryFilter.value = "";
+            filterCards();
+        }
+
+        searchInput.addEventListener("input", filterCards);
+        yearFilter.addEventListener("change", filterCards);
+        categoryFilter.addEventListener("change", filterCards);
+        resetButton.addEventListener("click", resetFilters);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traitement Données - ePortfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container2">
+            <h1>Outils de traitement de données</h1>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="diplomes.html">Diplômes</a></li>
+            <li><a href="experiences.html">Expériences professionnelles</a></li>
+            <li><a href="projets.html">Projets</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="Proj_cam1">
+            <h2>Fondement</h2>
+            <p>L’objectif principal de ce projet était d’analyser et d’optimiser les performances d’un réseau WiFi au
+                sein du bâtiment C. Nous avons mené un ensemble d’actions techniques allant du câblage physique jusqu’à
+                la modélisation du réseau via le simulateur Cisco Packet Tracer.</p>
+            <p>Une attention particulière a été portée sur l’étude des réseaux WiFi en 2,4 GHz et 5 GHz, en analysant
+                leur portée, leurs performances et leur efficacité dans différents environnements. Ces mesures ont
+                permis de cartographier les zones de couverture optimales et de comprendre les limites techniques de
+                chaque fréquence.</p>
+        </section>
+
+        <section id="Proj_cam2">
+            <h2>Technologies et matériel utilisés</h2>
+            <ul>
+                <li>Python</li>
+                <li>Bibliothèque Pathlib</li>
+                <li>Interface graphique avec PyQt5</li>
+                <li>Scripts d’automatisation avec PowerShell</li>
+                <li>Visualisation des données avec PyQtChart</li>
+            </ul>
+        </section>
+
+        <section id="Proj_cam3">
+            <h2>Répartition des rôles</h2>
+            <p>Développement de l'outil</p>
+            <ul>
+                <li>Matthieu D.</li>
+                <li>Akaza K.</li>
+            </ul>
+        </section>
+
+        <section id="Proj_cam4">
+            <h2>Déroulement du projet</h2>
+            <p>Le projet a débuté par la création d’un script Python développé par Arthur. Ce script scanne tous les fichiers d’un répertoire et permet de fixer un seuil de taille pour ne conserver que les fichiers volumineux.</p>
+            <p>En parallèle, Cameron a développé une interface graphique avec PyQt5, rendant l’outil plus intuitif. Cette interface permet à l’utilisateur de sélectionner le dossier à analyser et d’afficher les résultats sous forme de liste ou de graphique circulaire.</p>
+            <p>Par la suite, un script PowerShell a été ajouté pour automatiser le lancement des scripts Python. Un second script PowerShell a été conçu pour permettre à l’utilisateur de confirmer la suppression des fichiers identifiés, assurant ainsi la sécurité des données.</p>
+        </section>
+
+        <section id="Proj_cam5">
+            <h2>Logiciel après analyse :</h2>
+            <img src="Images/image.png" alt="Logiciel après analyse">
+        </section>
+
+        <section id="Proj_cam6">
+            <h2>Liste des fichiers détectés :</h2>
+            <img src="Images/image.png" alt="Liste des fichiers détectés">
+        </section>
+
+        <section id="Proj_cam7">
+            <h2>Menu de suppression :</h2>
+            <img src="Images/image.png" alt="Menu de suppression">
+        </section>
+
+        <section id="Proj_cam8">
+            <h2>Contraintes et solutions</h2>
+            <p>L’intégration du script PowerShell de suppression a posé plusieurs problèmes, notamment en raison des
+                autorisations d’accès aux fichiers et des limites du système. Après plusieurs ajustements, nous avons pu
+                automatiser cette partie tout en gardant un contrôle manuel par l’utilisateur.</p>
+            <p>Une autre difficulté est survenue lors de la suppression de fichier, supprimer un fichier
+                ne fonctionnait avec les cases à cocher et ouvrait une page du gestionnaire de fichier permettant de
+                faire une suppression.</p>
+        </section>
+
+        <section id="Proj_cam9">
+            <h2>Résultats</h2>
+            <ul>
+                <li>Développement d’un outil complet d’analyse des fichiers volumineux</li>
+                <li>Interface graphique fonctionnelle avec affichage des résultats</li>
+                <li>Suppression des fichiers intégrée via un menu PowerShell sécurisé</li>
+            </ul>
+        </section>
+
+        <section id="Proj_cam10">
+            <h2>Leçons tirées du projet</h2>
+            <p>Ce projet m’a permis d’approfondir mes compétences en programmation Python et PowerShell, en structurant
+                un outil modulaire et automatisé.</p>
+            <p>La création de l’interface graphique avec PyQt5 m’a appris à rendre un programme plus accessible à
+                l’utilisateur, tout en gérant l’affichage dynamique des résultats à l’aide de graphiques.</p>
+            <p>J’ai aussi découvert l’importance d’une bonne gestion des fichiers dans un environnement multi-plateforme
+                (Windows, Linux, MacOS) et l’intérêt d’utiliser le format JSON pour stocker temporairement les données à
+                analyser.</p>
+            <p>Enfin, ce projet m’a sensibilisé aux défis de l’ergonomie, de la pagination et de la sécurité lors de la
+                manipulation de fichiers utilisateurs.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="A propos.html">À propos</a>
+                <a href="Contact.html">Contact</a>
+                <a href="Confidentialite.html">Politique de confidentialité</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/votre_profil" target="_blank" title="Instagram">
+                    <img src="Images/logo-insta.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/votre_profil" target="_blank" title="LinkedIn">
+                    <img src="Images/logo-linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/Grenat-404/SAE.CV" target="_blank" title="Github">
+                    <img src="Images/logo-github.png" alt="Github">
+                </a>
+                </a>
+            </div>
+            <p>&copy; 2024 - DEJOIE Matthieu. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
