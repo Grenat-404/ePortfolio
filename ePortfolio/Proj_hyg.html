@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygiène Informatique - ePortfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container2">
+            <h1>Hygiène informatique</h1>
+        </div>
+    </header>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="diplomes.html">Diplômes</a></li>
+            <li><a href="experiences.html">Expériences professionnelles</a></li>
+            <li><a href="projets.html">Projets</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="Proj_baie1">
+            <h2>Fondement</h2>
+            <p></p>
+            <p></p>
+        </section>
+
+        <section id="Proj_baie2">
+            <h2>Technologies et matériel utilisés</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+
+        <section id="Proj_baie3">
+            <h2>Répartition des rôles</h2>
+            <p></p>
+            <ul>
+                <li>Matthieu D.</li>
+                <li>Akaza K.</li>
+                <li>Luca F.</li>
+            </ul>
+        </section>
+
+        <section id="Proj_baie4">
+            <h2>Déroulement du projet</h2>
+            <p>Dans un premier temps, nous avons installé les noyaux RJ45 Catégorie 6a sur les panneaux de brassage
+                situés dans les salles C100 et C102. Le point d’accès WiFi a ensuite été connecté au réseau via les
+                switchs PoE Cisco, assurant à la fois l’alimentation et la communication réseau. Un testeur a été
+                utilisé pour valider le bon fonctionnement du câblage.</p>
+            <p>Nous avons ensuite mesuré la tension et la puissance délivrées par les ports PoE, afin d’évaluer la perte
+                de signal sur différentes longueurs de câble.</p>
+            <p>Des relevés WiFi ont été effectués à divers emplacements dans le bâtiment, à l’aide de postes fixes et
+                mobiles, pour évaluer la puissance du signal et les débits disponibles selon la distance. Ces données
+                ont été utilisées pour générer des heatmaps précises grâce au logiciel Acrylic.</p>
+            <p>Enfin, une simulation du réseau a été réalisée sur Packet Tracer, incluant les éléments du réseau
+                physique : routeur, switchs, point d’accès et contrôleur WiFi. Cela a permis de mieux visualiser le
+                fonctionnement du réseau et d’effectuer des tests de communication.</p>
+        </section>
+
+        <section id="Proj_baie5">
+            <h2>Schéma de câblage (salles C100, C101 et C102) :</h2>
+            <img src="Images/image.png" alt="Schéma de câblage">
+        </section>
+
+        <section id="Proj_baie6">
+            <h2>Heatmap réseau 2,4 GHz :</h2>
+            <img src="Images/image.png" alt="Heatmap réseau 2,4 GHz">
+        </section>
+
+        <section id="Proj_baie7">
+            <h2>Heatmap réseau 5 GHz :</h2>
+            <img src="Images/image.png" alt="Heatmap réseau 5 GHz">
+        </section>
+
+        <section id="Proj_baie8">
+            <h2>Contraintes et solutions</h2>
+            <p>Plusieurs contraintes techniques ont été rencontrées. L’une des plus marquantes a été la perte importante
+                du signal WiFi, notamment sur la fréquence 5 GHz. Cette bande, bien que plus rapide, offrait une portée
+                limitée (environ 30 mètres) et était particulièrement sensible aux obstacles tels que les murs et les
+                étages.</p>
+            <p>Le 2,4 GHz, en revanche, a démontré une portée bien plus longue, atteignant jusqu’à 120 mètres, malgré un
+                affaiblissement progressif du signal au fil de la distance.</p>
+            <p>Par ailleurs, des interférences causées par d’autres réseaux présents dans le bâtiment ont perturbé
+                certains canaux. Pour pallier cela, nous avons réservé l’usage du 5 GHz aux zones proches du point
+                d’accès, et utilisé le 2,4 GHz pour assurer la couverture dans les espaces plus éloignés.</p>
+        </section>
+
+        <section id="Proj_baie9">
+            <h2>Résultats</h2>
+            <ul>
+                <li>Installation complète des noyaux RJ45 Catégorie 6a</li>
+                <li>WiFi 2,4 GHz : portée jusqu’à 120 m, avec perte de puissance à travers les obstacles</li>
+                <li>WiFi 5 GHz : portée efficace jusqu’à 30 m, débits supérieurs mais instables au-delà</li>
+                <li>Bonne couverture au rez-de-chaussée, couverture homogène au 1er étage grâce à la position des AP
+                </li>
+                <li>Heatmaps détaillées générées pour visualiser la couverture réelle du signal</li>
+            </ul>
+        </section>
+
+        <section id="Proj_baie10">
+            <h2>Leçons tirées du projet</h2>
+            <p>Ce projet nous a permis d’approfondir notre compréhension du fonctionnement d’un réseau WiFi en
+                conditions réelles. Nous avons appris à effectuer des relevés de signal, à analyser les débits en
+                fonction des bandes de fréquence, et à créer des heatmaps pour visualiser la couverture.</p>
+            <p>Sur le plan technique, ce travail nous a également familiarisés avec les aspects pratiques du câblage
+                réseau, la configuration d’équipements Cisco, et la simulation complète d’un réseau dans Packet Tracer,
+                intégrant un contrôleur WiFi.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="A propos.html">À propos</a>
+                <a href="Contact.html">Contact</a>
+                <a href="Confidentialite.html">Politique de confidentialité</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/votre_profil" target="_blank" title="Instagram">
+                    <img src="Images/logo-insta.png" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/votre_profil" target="_blank" title="LinkedIn">
+                    <img src="Images/logo-linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/Grenat-404/SAE.CV" target="_blank" title="Github">
+                    <img src="Images/logo-github.png" alt="Github">
+                </a>
+                </a>
+            </div>
+            <p>&copy; 2024 - DEJOIE Matthieu. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
