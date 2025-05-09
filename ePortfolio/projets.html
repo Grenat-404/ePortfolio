@@ -43,6 +43,12 @@
             <option value="Multi">Multi</option>
             <option value="Multi">Autre</option>
         </select>
+        <select id="compFilter">
+            <option value="">Toutes les compétences</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+        </select>
         <button id="resetButton">Réinitialiser</button>
     </div>
 
@@ -117,6 +123,7 @@
         const searchInput = document.getElementById("searchInput");
         const yearFilter = document.getElementById("yearFilter");
         const categoryFilter = document.getElementById("categoryFilter");
+        const compFilter = document.getElementById("compFilter");
         const resetButton = document.getElementById("resetButton");
         const cards = document.querySelectorAll(".card");
 
@@ -124,15 +131,18 @@
             const searchTerm = searchInput.value.toLowerCase();
             const selectedYear = yearFilter.value;
             const selectedCategory = categoryFilter.value;
+            const selectedComp = compFilter.value;
 
             cards.forEach(card => {
                 const title = card.querySelector("h2").textContent.toLowerCase();
                 const annee = card.dataset.annee;
                 const categorie = card.dataset.categorie;
+                const competences = card.dataset.competences;
 
                 const matchesSearch = title.includes(searchTerm);
                 const matchesYear = selectedYear === "" || annee === selectedYear;
                 const matchesCategory = selectedCategory === "" || categorie === selectedCategory;
+                const matchesComp = selectedComp === "" || competences.includes(selectedComp);
 
                 if (matchesSearch && matchesYear && matchesCategory) {
                     card.style.display = "block";
@@ -146,12 +156,14 @@
             searchInput.value = "";
             yearFilter.value = "";
             categoryFilter.value = "";
+            compFilter.value = "";
             filterCards();
         }
 
         searchInput.addEventListener("input", filterCards);
         yearFilter.addEventListener("change", filterCards);
         categoryFilter.addEventListener("change", filterCards);
+        compFilter.addEventListener("change", filterCards);
         resetButton.addEventListener("click", resetFilters);
     </script>
 
