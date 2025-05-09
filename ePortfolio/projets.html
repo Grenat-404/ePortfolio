@@ -45,47 +45,33 @@
         </select>
         <select id="compFilter">
             <option value="">Toutes les compétences</option>
-            <option value="Administrer les réseaux et
-                l’Internet">Administrer les réseaux et
-                l’Internet</option>
-            <option value="Connecter les entreprises et
-                les usagers">Connecter les entreprises et
-                les usagers</option>
-            <option value="Créer des outils et
-                applications informatiques
-                pour les R&T">Créer des outils et
-                applications informatiques
-                pour les R&T</option>
-            <option value="Administrer un système
-                d’information sécurisé">Administrer un système
-                d’information sécurisé</option>
-            <option value="Surveiller un système
-                d’information sécurisé">Surveiller un système
-                d’information sécurisé</option>
+            <option value="Administrer">Administrer</option>
+            <option value="Connecter">Connecter</option>
+            <option value="Programmer">Programmer</option>
         </select>
         <button id="resetButton">Réinitialiser</button>
     </div>
 
     <main>
         <div class="card-container">
-            <a href="Proj_CV.html" class="card" data-annee="2024" data-categorie="Développement Web">
+            <a href="Proj_CV.html" class="card" data-annee="2024" data-categorie="Développement Web" data-competences="Programmer">
                 <img src="Images/CV_flou.png" alt="Site web Curriculum Vitae">
                 <h2>Site web Curriculum Vitae</h2>
                 <p>Développement Web<span class="marge"><span class="marge"><span
                                 class="marge">2024</span></span></span></p>
             </a>
-            <a href="Proj_cam.html" class="card" data-annee="2025" data-categorie="Programmation">
+            <a href="Proj_cam.html" class="card" data-annee="2025" data-categorie="Programmation" data-competences="Programmer">
                 <img src="Images/Proj_cam.png" alt="Outil de traitement de données">
                 <h2>Outil de traitement de données</h2>
                 <p>Programmation<span class="marge"><span class="marge"><span class="marge">2025</span></span></span>
                 </p>
             </a>
-            <a href="Proj_baie.html" class="card" data-annee="2024" data-categorie="Multi">
+            <a href="Proj_baie.html" class="card" data-annee="2024" data-categorie="Multi" data-competences="Connecter">
                 <img src="Images/Proj_baie.jpg" alt="Dispositif de transmission">
                 <h2>Dispositif de transmission</h2>
                 <p>Multi<span class="marge"><span class="marge"><span class="marge">2024</span></span></span></p>
             </a>
-            <a href="Proj_hyg.html" class="card" data-annee="2024" data-categorie="Autre">
+            <a href="Proj_hyg.html" class="card" data-annee="2024" data-categorie="Autre" data-competences="Administrer">
                 <img src="Images/Proj_hyg.png" alt="Hygiène informatique">
                 <h2>Hygiène informatique</h2>
                 <p>Autre<span class="marge"><span class="marge"><span class="marge">2024</span></span></span></p>
@@ -158,7 +144,7 @@
                 const matchesCategory = selectedCategory === "" || categorie === selectedCategory;
                 const matchesComp = selectedComp === "" || competences.includes(selectedComp);
 
-                if (matchesSearch && matchesYear && matchesCategory) {
+                if (matchesSearch && matchesYear && matchesCategory && matchesComp) {
                     card.style.display = "block";
                 } else {
                     card.style.display = "none";
