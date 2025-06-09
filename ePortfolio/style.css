@@ -580,7 +580,100 @@ pre code {
   text-align: center;
   border-radius: 10px;
 }
+/*-------------------------------------------Study-------------------------------------------*/
+.study {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: var(--white-color);
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 150px;
+}
 
+.study-title {
+    font-family: "Inter-Bold", Helvetica, sans-serif;
+    font-size: 32px;
+    color: var(--black-color);
+    margin-bottom: 40px;
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 20px;
+    height: 300px;
+}
+
+.timeline-box {
+    background-color: var(--white-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+    position: absolute;
+}
+
+.timeline-box.left {
+    top: calc(25% - 50px);
+    right: calc(50% + 50px);
+}
+
+.timeline-box.right {
+    top: calc(75% - 50px);
+    left: calc(50% + 50px);
+}
+
+.timeline-box h3 {
+    font-family: "Inter-Bold", Helvetica, sans-serif;
+    font-size: 18px;
+    color: var(--black-color);
+    margin-bottom: 10px;
+}
+
+.timeline-box p {
+    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-size: 14px;
+    color: var(--grey-color);
+    margin-bottom: 15px;
+}
+
+.timeline-date {
+    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-size: 14px;
+    color: var(--grey-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.timeline-bar {
+    width: 8px;
+    height: 100%;
+    background-color: var(--skills-box);
+    position: relative;
+    border-radius: 80px;
+}
+
+.timeline-circle {
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-circle:first-child {
+    top: 25%;
+}
+
+.timeline-circle:last-child {
+    bottom: 25%;
+}
 
 /* Media queries */
 @media (max-width: 1240px) {
