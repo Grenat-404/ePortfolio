@@ -1256,14 +1256,22 @@ pre code {
   text-align: center;
   border-radius: 10px;
 }
-
 /*-------------------------------------------Study-------------------------------------------*/
 .study {
     width: 100%;
     padding: 40px 20px;
+    background-color: var(--white-color);
     text-align: center;
     margin: 150px 0 100px 0;
 }
+
+.study-title {
+    font-family: "Inter-Bold", Helvetica, sans-serif;
+    font-size: 28px;
+    color: #E84545; /* Couleur identique aux h2 globaux */
+    margin-bottom: 40px;
+}
+
 
 /* Timeline grid structure */
 .timeline-grid {
