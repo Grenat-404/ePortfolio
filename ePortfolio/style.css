@@ -335,6 +335,10 @@ footer .social-icons {
     display: flex;
     justify-content: center;
     gap: 15px;
+    width: 100vw;   /* ou une largeur fixe ou relative */
+    height: 100vh;  /* ou une hauteur définie */
+    position: relative;
+    overflow: hidden;
 }
 
 footer .social-icons a {
