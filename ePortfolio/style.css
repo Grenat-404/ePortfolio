@@ -333,17 +333,20 @@ footer p {
 
 footer .social-icons {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement */
     gap: 15px;
 }
 
 footer .social-icons a {
-    display: inline-block;
+    display: flex;           /* pour centrer l’image à l’intérieur du cercle */
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     overflow: hidden;
-    background-color: #53354A; /* Icon background */
+    background-color: #53354A;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -353,9 +356,9 @@ footer .social-icons a:hover {
 }
 
 footer .social-icons img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Maintains image proportions */
+    width: 60%;              /* ajuste la taille à l’intérieur du cercle */
+    height: 60%;
+    object-fit: contain;
     border-radius: 50%;
 }
 
