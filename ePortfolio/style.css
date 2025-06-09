@@ -1533,6 +1533,24 @@ pre code {
   bottom: 15%;
 }
 
+.timeline-card {
+  background-color: white;
+  color: #333;
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px; /* ↓ largeur réduite ici */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
 /* Media queries */
 @media (max-width: 1240px) {
     main section {
