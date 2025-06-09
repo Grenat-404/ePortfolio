@@ -217,41 +217,33 @@
             <p>&copy; 2025 - DEJOIE Matthieu. Tous droits réservés.</p>
         </div>
     </footer>
-
     <script>
-        const track = document.querySelector('.carousel-track');
-        const allItems = document.querySelectorAll('.carousel-item');
-        const maxItems = 5;
+  const track = document.querySelector('.carousel-track');
+  const items = document.querySelectorAll('.carousel-item');
+  const nextButton = document.querySelector('.carousel-btn.next');
+  const prevButton = document.querySelector('.carousel-btn.prev');
+  let index = 0;
+  const visibleItems = 3;
+  const maxIndex = items.length - visibleItems; // ici : 4 - 3 = 1
 
-        allItems.forEach((item, i) => {
-            if (i >= maxItems) {
-                item.style.display = 'none';
-            }
-        });
+  function updateCarousel() {
+    const width = items[0].offsetWidth + 20; // +20 = marge entre les cartes
+    track.style.transform = `translateX(-${index * width}px)`;
+  }
 
-        const items = document.querySelectorAll('.carousel-item:not([style*="display: none"])');
+  nextButton.addEventListener('click', () => {
+    index = (index + 1) > maxIndex ? 0 : index + 1;
+    updateCarousel();
+  });
 
-        const nextButton = document.querySelector('.carousel-btn.next');
-        const prevButton = document.querySelector('.carousel-btn.prev');
-        let index = 0;
+  prevButton.addEventListener('click', () => {
+    index = (index - 1) < 0 ? maxIndex : index - 1;
+    updateCarousel();
+  });
 
-        function updateCarousel() {
-            const width = items[0].offsetWidth + 20; // +20 pour la marge
-            track.style.transform = `translateX(-${index * width}px)`;
-        }
+  window.addEventListener('resize', updateCarousel);
+</script>
 
-        nextButton.addEventListener('click', () => {
-            index = (index + 1) % items.length;
-            updateCarousel();
-        });
-
-        prevButton.addEventListener('click', () => {
-            index = (index - 1 + items.length) % items.length;
-            updateCarousel();
-        });
-
-        window.addEventListener('resize', updateCarousel);
-    </script>
 
 </body>
 
