@@ -263,12 +263,6 @@ a:hover {
     text-align: center;
 }
 
-.skills h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #E84545; /* Heading color */
-}
-
 .flex-container {
     display: flex;
     justify-content: space-around;
