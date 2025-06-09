@@ -55,19 +55,35 @@
     </nav>
 
     <main>
-        <section>
-            <div id="Form">
-                <h2><a href="formations.html">Formations</a></h2>
-                <ul>
-                    <a class="texte" href="formations.html">
-                        <li>Baccalauréat Général | 2021 - 2024</li>
-                    </a>
-                    <a class="texte" href="formations.html">
-                        <li>BUT Réseaux & Télécomms | 2024 - (en cours)</li>
-                    </a>
-                </ul>
+        <section id="Form">
+            <h2><a href="formations.html">Formations</a></h2>
+
+            <div class="search-container">
+                <input type="text" placeholder="Rechercher une formation" id="formSearchInput">
+                <select id="formYearFilter">
+                    <option value="">Toutes les années</option>
+                    <option value="2024">2024</option>
+                    <option value="2021">2021</option>
+                </select>
+                <button id="formResetButton">Réinitialiser</button>
+            </div>
+
+            <div class="card-container" id="formCardContainer">
+                <div class="card" data-annee="2024">
+                    <img src="Images/iut.jpg" alt="BUT Réseaux & Télécomms">
+                    <h2>BUT Réseaux & Télécomms</h2>
+                    <p>IUT de Colmar (2024 - ...)</p>
+                    <p>Modules : Administrer, Connecter, Créer</p>
+                </div>
+                <div class="card" data-annee="2021">
+                    <img src="Images/lycee.jpg" alt="Baccalauréat Général">
+                    <h2>Baccalauréat Général</h2>
+                    <p>Lycée La Bruyère (2021 - 2024)</p>
+                    <p>Spécialités : NSI, AMC</p>
+                </div>
             </div>
         </section>
+
 
         <section id="carousel-projets">
             <h2>Mes projets</h2>
@@ -235,54 +251,83 @@
         </div>
     </footer>
     <script>
-  const track = document.querySelector('.carousel-track');
-  const items = document.querySelectorAll('.carousel-item');
-  const nextBtn = document.querySelector('.carousel-btn.next');
-  const prevBtn = document.querySelector('.carousel-btn.prev');
+        const track = document.querySelector('.carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
 
-  const itemWidth = items[0].offsetWidth + 20; // 300 + marge
-  let position = 0;
-  const visibleItems = 3;
-  const totalItems = items.length;
+        const itemWidth = items[0].offsetWidth + 20; // 300 + marge
+        let position = 0;
+        const visibleItems = 3;
+        const totalItems = items.length;
 
-  function updatePosition() {
-    track.style.transition = 'transform 0.5s ease-in-out';
-    track.style.transform = `translateX(-${position * itemWidth}px)`;
-  }
+        function updatePosition() {
+            track.style.transition = 'transform 0.5s ease-in-out';
+            track.style.transform = `translateX(-${position * itemWidth}px)`;
+        }
 
-  nextBtn.addEventListener('click', () => {
-    position++;
-    updatePosition();
+        nextBtn.addEventListener('click', () => {
+            position++;
+            updatePosition();
 
-    if (position === totalItems - visibleItems + 1) {
-      // petite pause avant de revenir au début
-      setTimeout(() => {
-        track.style.transition = 'none';
-        position = 0;
-        track.style.transform = `translateX(-${position * itemWidth}px)`;
-      }, 500);
-    }
-  });
+            if (position === totalItems - visibleItems + 1) {
+                // petite pause avant de revenir au début
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    position = 0;
+                    track.style.transform = `translateX(-${position * itemWidth}px)`;
+                }, 500);
+            }
+        });
 
-  prevBtn.addEventListener('click', () => {
-    if (position === 0) {
-      track.style.transition = 'none';
-      position = totalItems - visibleItems + 1;
-      track.style.transform = `translateX(-${position * itemWidth}px)`;
-    }
+        prevBtn.addEventListener('click', () => {
+            if (position === 0) {
+                track.style.transition = 'none';
+                position = totalItems - visibleItems + 1;
+                track.style.transform = `translateX(-${position * itemWidth}px)`;
+            }
 
-    setTimeout(() => {
-      position--;
-      track.style.transition = 'transform 0.5s ease-in-out';
-      updatePosition();
-    }, 10);
-  });
+            setTimeout(() => {
+                position--;
+                track.style.transition = 'transform 0.5s ease-in-out';
+                updatePosition();
+            }, 10);
+        });
 
-  window.addEventListener('resize', () => {
-    track.style.transition = 'none';
-    track.style.transform = `translateX(-${position * itemWidth}px)`;
-  });
-</script>
+        window.addEventListener('resize', () => {
+            track.style.transition = 'none';
+            track.style.transform = `translateX(-${position * itemWidth}px)`;
+        });
+        const formSearchInput = document.getElementById("formSearchInput");
+        const formYearFilter = document.getElementById("formYearFilter");
+        const formResetButton = document.getElementById("formResetButton");
+        const formCards = document.querySelectorAll("#formCardContainer .card");
+
+        function filterFormCards() {
+            const searchTerm = formSearchInput.value.toLowerCase();
+            const selectedYear = formYearFilter.value;
+
+            formCards.forEach(card => {
+                const title = card.querySelector("h2").textContent.toLowerCase();
+                const annee = card.dataset.annee;
+
+                const matchesSearch = title.includes(searchTerm);
+                const matchesYear = selectedYear === "" || annee === selectedYear;
+
+                card.style.display = (matchesSearch && matchesYear) ? "block" : "none";
+            });
+        }
+
+        function resetFormFilters() {
+            formSearchInput.value = "";
+            formYearFilter.value = "";
+            filterFormCards();
+        }
+
+        formSearchInput.addEventListener("input", filterFormCards);
+        formYearFilter.addEventListener("change", filterFormCards);
+        formResetButton.addEventListener("click", resetFormFilters);
+    </script>
 
 
 
