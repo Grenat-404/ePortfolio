@@ -482,6 +482,38 @@ pre code {
 .carousel-btn.next {
   right: 10px;
 }
+.carousel-item {
+  width: 300px; /* même largeur pour tous */
+  height: 280px; /* hauteur fixe */
+  flex-shrink: 0;
+  background-color: #2B2E4A;
+  margin: 0 10px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden; /* évite le débordement */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* évite les déformations */
+  border-radius: 10px 10px 0 0;
+}
+
+.carousel-item h3 {
+  height: 60px; /* hauteur fixe pour le texte */
+  margin: 0;
+  padding: 10px;
+  font-size: 1rem;
+  color: #E84545;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 /* Media queries */
