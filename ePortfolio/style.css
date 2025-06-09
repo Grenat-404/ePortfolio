@@ -584,7 +584,7 @@ pre code {
 .study {
     width: 100%;
     padding: 40px 20px;
-    background-color: #ffffff;
+    background-color: var(--white-color);
     text-align: center;
     margin-bottom: 100px;
     margin-top: 150px;
@@ -593,7 +593,7 @@ pre code {
 .study-title {
     font-family: "Inter-Bold", Helvetica, sans-serif;
     font-size: 32px;
-    color: #ffffff;
+    color: var(--black-color);
     margin-bottom: 40px;
 }
 
@@ -607,7 +607,7 @@ pre code {
 }
 
 .timeline-box {
-    background-color: #ffffff;
+    background-color: var(--white-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -629,21 +629,21 @@ pre code {
 .timeline-box h3 {
     font-family: "Inter-Bold", Helvetica, sans-serif;
     font-size: 18px;
-    color: #ffffff;
+    color: var(--black-color);
     margin-bottom: 10px;
 }
 
 .timeline-box p {
     font-family: "Inter-Regular", Helvetica, sans-serif;
     font-size: 14px;
-    color: #ffffff;
+    color: var(--grey-color);
     margin-bottom: 15px;
 }
 
 .timeline-date {
     font-family: "Inter-Regular", Helvetica, sans-serif;
     font-size: 14px;
-    color: #ffffff;
+    color: var(--grey-color);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -652,7 +652,7 @@ pre code {
 .timeline-bar {
     width: 8px;
     height: 100%;
-    background-color: #ffffff;
+    background-color: var(--skills-box);
     position: relative;
     border-radius: 80px;
 }
@@ -660,7 +660,7 @@ pre code {
 .timeline-circle {
     width: 16px;
     height: 16px;
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     border-radius: 50%;
     position: absolute;
     left: 50%;
@@ -673,6 +673,74 @@ pre code {
 
 .timeline-circle:last-child {
     bottom: 25%;
+}
+.timeline-modern {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    margin-top: 60px;
+}
+
+.timeline-line {
+    width: 6px;
+    height: 250px;
+    background-color: rgba(124, 104, 238, 0.3); /* violet pâle */
+    border-radius: 10px;
+    position: relative;
+}
+
+.timeline-line::before,
+.timeline-line::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: #7c68ee;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-line::before {
+    top: 25%;
+}
+
+.timeline-line::after {
+    bottom: 25%;
+}
+
+.timeline-item {
+    flex: 1;
+    max-width: 280px;
+}
+
+.timeline-card {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.timeline-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.timeline-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 4px 0;
+}
+
+.study-title {
+    font-size: 28px;
+    color: white;
 }
 
 /* Media queries */
