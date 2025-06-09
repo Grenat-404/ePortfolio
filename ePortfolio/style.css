@@ -332,9 +332,9 @@ footer p {
 }
 
 footer .social-icons {
-    display: flex;
+
     justify-content: center;
-    
+    gap: 15px;
 }
 
 footer .social-icons a {
