@@ -89,6 +89,19 @@
                         <img src="Images/Proj_hyg.png" alt="Hygiène info">
                         <h3>Hygiène informatique</h3>
                     </a>
+                    <!-- boucle -->
+                    <a href="Proj_CV.html" class="carousel-item">
+                        <img src="Images/CV_flou.png" alt="Site web CV">
+                        <h3>Site web CV</h3>
+                    </a>
+                    <a href="Proj_baie.html" class="carousel-item">
+                        <img src="Images/Proj_baie.jpg" alt="Dispositif de transmission">
+                        <h3>Transmission réseau</h3>
+                    </a>
+                    <a href="Proj_cam.html" class="carousel-item">
+                        <img src="Images/Proj_cam.png" alt="Outil données">
+                        <h3>Outil de traitement</h3>
+                    </a>
                 </div>
                 <button class="carousel-btn prev">&#10094;</button>
                 <button class="carousel-btn next">&#10095;</button>
@@ -220,29 +233,53 @@
     <script>
   const track = document.querySelector('.carousel-track');
   const items = document.querySelectorAll('.carousel-item');
-  const nextButton = document.querySelector('.carousel-btn.next');
-  const prevButton = document.querySelector('.carousel-btn.prev');
-  let index = 0;
-  const visibleItems = 3;
-  const maxIndex = items.length - visibleItems; // ici : 4 - 3 = 1
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
 
-  function updateCarousel() {
-    const width = items[0].offsetWidth + 20; // +20 = marge entre les cartes
-    track.style.transform = `translateX(-${index * width}px)`;
+  const itemWidth = items[0].offsetWidth + 20; // 300 + marge
+  let position = 0;
+  const visibleItems = 3;
+  const totalItems = items.length;
+
+  function updatePosition() {
+    track.style.transition = 'transform 0.5s ease-in-out';
+    track.style.transform = `translateX(-${position * itemWidth}px)`;
   }
 
-  nextButton.addEventListener('click', () => {
-    index = (index + 1) > maxIndex ? 0 : index + 1;
-    updateCarousel();
+  nextBtn.addEventListener('click', () => {
+    position++;
+    updatePosition();
+
+    if (position === totalItems - visibleItems + 1) {
+      // petite pause avant de revenir au début
+      setTimeout(() => {
+        track.style.transition = 'none';
+        position = 0;
+        track.style.transform = `translateX(-${position * itemWidth}px)`;
+      }, 500);
+    }
   });
 
-  prevButton.addEventListener('click', () => {
-    index = (index - 1) < 0 ? maxIndex : index - 1;
-    updateCarousel();
+  prevBtn.addEventListener('click', () => {
+    if (position === 0) {
+      track.style.transition = 'none';
+      position = totalItems - visibleItems + 1;
+      track.style.transform = `translateX(-${position * itemWidth}px)`;
+    }
+
+    setTimeout(() => {
+      position--;
+      track.style.transition = 'transform 0.5s ease-in-out';
+      updatePosition();
+    }, 10);
   });
 
-  window.addEventListener('resize', updateCarousel);
+  window.addEventListener('resize', () => {
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${position * itemWidth}px)`;
+  });
 </script>
+
 
 
 </body>
