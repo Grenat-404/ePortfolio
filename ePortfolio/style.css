@@ -1256,122 +1256,49 @@ pre code {
   text-align: center;
   border-radius: 10px;
 }
+
 /*-------------------------------------------Study-------------------------------------------*/
 .study {
     width: 100%;
     padding: 40px 20px;
     background-color: var(--white-color);
     text-align: center;
-    margin-bottom: 100px;
-    margin-top: 150px;
+    margin: 150px 0 100px 0;
 }
 
 .study-title {
     font-family: "Inter-Bold", Helvetica, sans-serif;
-    font-size: 32px;
-    color: var(--black-color);
+    font-size: 28px;
+    color: white;
     margin-bottom: 40px;
 }
 
-.timeline {
-    display: flex;
+/* Timeline grid structure */
+.timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
+    gap: 40px;
+    margin-top: 50px;
     position: relative;
-    gap: 20px;
-    height: 300px;
 }
 
-.timeline-box {
-    background-color: var(--white-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Timeline line */
+.timeline-line {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    width: 6px;
+    height: 280px;
+    background-color: rgba(124, 104, 238, 0.3);
     border-radius: 10px;
-    padding: 20px;
-    width: 250px;
-    text-align: left;
-    position: absolute;
-}
-
-.timeline-box.left {
-    top: calc(25% - 50px);
-    right: calc(50% + 50px);
-}
-
-.timeline-box.right {
-    top: calc(75% - 50px);
-    left: calc(50% + 50px);
-}
-
-.timeline-box h3 {
-    font-family: "Inter-Bold", Helvetica, sans-serif;
-    font-size: 18px;
-    color: var(--black-color);
-    margin-bottom: 10px;
-}
-
-.timeline-box p {
-    font-family: "Inter-Regular", Helvetica, sans-serif;
-    font-size: 14px;
-    color: var(--grey-color);
-    margin-bottom: 15px;
-}
-
-.timeline-date {
-    font-family: "Inter-Regular", Helvetica, sans-serif;
-    font-size: 14px;
-    color: var(--grey-color);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.timeline-bar {
-    width: 8px;
-    height: 100%;
-    background-color: var(--skills-box);
     position: relative;
-    border-radius: 80px;
 }
 
+/* Timeline points */
 .timeline-circle {
     width: 16px;
     height: 16px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.timeline-circle:first-child {
-    top: 25%;
-}
-
-.timeline-circle:last-child {
-    bottom: 25%;
-}
-.timeline-modern {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    position: relative;
-    margin-top: 60px;
-}
-
-.timeline-line {
-    width: 6px;
-    height: 250px;
-    background-color: rgba(124, 104, 238, 0.3); /* violet pâle */
-    border-radius: 10px;
-    position: relative;
-}
-
-.timeline-line::before,
-.timeline-line::after {
-    content: "";
-    width: 14px;
-    height: 14px;
     background-color: #7c68ee;
     border-radius: 50%;
     position: absolute;
@@ -1379,27 +1306,24 @@ pre code {
     transform: translateX(-50%);
 }
 
-.timeline-line::before {
+.timeline-circle.top {
     top: 25%;
 }
 
-.timeline-line::after {
+.timeline-circle.bottom {
     bottom: 25%;
 }
 
-.timeline-item {
-    flex: 1;
-    max-width: 280px;
-}
-
+/* Timeline cards */
 .timeline-card {
     background-color: white;
     color: #333;
+    border-radius: 20px;
     padding: 20px;
-    border-radius: 16px;
+    width: 280px; /* largeur réduite */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: left;
-    font-family: Arial, sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .timeline-card h3 {
@@ -1414,141 +1338,17 @@ pre code {
     margin: 4px 0;
 }
 
-.study-title {
-    font-size: 28px;
-    color: white;
-}
-.timeline-modern {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-top: 60px;
-    gap: 40px;
-}
-
-/* Ligne verticale */
-.timeline-line {
-    position: relative;
-    width: 6px;
-    height: 300px;
-    background-color: rgba(124, 104, 238, 0.3);
-    border-radius: 10px;
-}
-
-/* Les cercles centrés verticalement */
-.timeline-line::before,
-.timeline-line::after {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: #7c68ee;
-    border-radius: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.timeline-line::before {
-    top: 25%;
-}
-
-.timeline-line::after {
-    top: 75%;
-}
-
-.timeline-item {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.timeline-card {
-    background-color: white;
-    color: #333;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    width: 280px;
-    position: relative;
-    top: 0;
-}
-
-.timeline-grid {
-  display: grid;
-  grid-template-columns: 1fr 60px 1fr;
-  align-items: center;
-  position: relative;
-  margin-top: 50px;
-}
-
-.timeline-card {
-  background-color: white;
-  color: #333;
-  border-radius: 20px;
-  padding: 20px;
-  width: 90%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Positionnement dans la grille */
 .timeline-card.left {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: end;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
 }
 
 .timeline-card.right {
-  grid-column: 3;
-  grid-row: 2;
-  justify-self: start;
-}
-
-.timeline-line {
-  grid-column: 2;
-  grid-row: 1 / 3;
-  width: 8px;
-  height: 100%;
-  background-color: #7e61ea;
-  border-radius: 10px;
-  position: relative;
-  justify-self: center;
-}
-
-.timeline-circle {
-  width: 16px;
-  height: 16px;
-  background-color: #a284ff;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.timeline-circle.top {
-  top: 15%;
-}
-
-.timeline-circle.bottom {
-  bottom: 15%;
-}
-
-.timeline-card {
-  background-color: white;
-  color: #333;
-  border-radius: 20px;
-  padding: 20px;
-  width: 300px; /* ↓ largeur réduite ici */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-grid {
-  display: grid;
-  grid-template-columns: 1fr 60px 1fr;
-  justify-items: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 50px;
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: start;
 }
 
 /* Media queries */
