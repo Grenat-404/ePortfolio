@@ -1265,13 +1265,13 @@ pre code {
     margin: 150px 0 100px 0;
 }
 
-.study-title {
+.section-title {
     font-family: "Inter-Bold", Helvetica, sans-serif;
     font-size: 28px;
-    color: #E84545; /* Couleur identique aux h2 globaux */
+    color: #E84545;
     margin-bottom: 40px;
+    text-align: center;
 }
-
 
 /* Timeline grid structure */
 .timeline-grid {
