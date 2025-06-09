@@ -584,7 +584,7 @@ pre code {
 .study {
     width: 100%;
     padding: 40px 20px;
-    background-color: var(--white-color);
+    background-color: #ffffff;
     text-align: center;
     margin-bottom: 100px;
     margin-top: 150px;
@@ -593,7 +593,7 @@ pre code {
 .study-title {
     font-family: "Inter-Bold", Helvetica, sans-serif;
     font-size: 32px;
-    color: var(--black-color);
+    color: #ffffff;
     margin-bottom: 40px;
 }
 
@@ -607,7 +607,7 @@ pre code {
 }
 
 .timeline-box {
-    background-color: var(--white-color);
+    background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -629,21 +629,21 @@ pre code {
 .timeline-box h3 {
     font-family: "Inter-Bold", Helvetica, sans-serif;
     font-size: 18px;
-    color: var(--black-color);
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 .timeline-box p {
     font-family: "Inter-Regular", Helvetica, sans-serif;
     font-size: 14px;
-    color: var(--grey-color);
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
 .timeline-date {
     font-family: "Inter-Regular", Helvetica, sans-serif;
     font-size: 14px;
-    color: var(--grey-color);
+    color: #ffffff;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -652,7 +652,7 @@ pre code {
 .timeline-bar {
     width: 8px;
     height: 100%;
-    background-color: var(--skills-box);
+    background-color: #ffffff;
     position: relative;
     border-radius: 80px;
 }
@@ -660,7 +660,7 @@ pre code {
 .timeline-circle {
     width: 16px;
     height: 16px;
-    background-color: var(--primary-color);
+    background-color: #ffffff;
     border-radius: 50%;
     position: absolute;
     left: 50%;
