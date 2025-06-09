@@ -358,7 +358,7 @@ footer .social-icons img {
     object-fit: cover;
 
     display: block; /* Supprime les espaces blancs internes (inline elements) */
-    transition: transform 0.3s ease;
+
 }
 
 
