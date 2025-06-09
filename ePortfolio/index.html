@@ -217,9 +217,20 @@
             <p>&copy; 2025 - DEJOIE Matthieu. Tous droits réservés.</p>
         </div>
     </footer>
+
     <script>
         const track = document.querySelector('.carousel-track');
-        const items = document.querySelectorAll('.carousel-item');
+        const allItems = document.querySelectorAll('.carousel-item');
+        const maxItems = 5;
+
+        allItems.forEach((item, i) => {
+            if (i >= maxItems) {
+                item.style.display = 'none';
+            }
+        });
+
+        const items = document.querySelectorAll('.carousel-item:not([style*="display: none"])');
+
         const nextButton = document.querySelector('.carousel-btn.next');
         const prevButton = document.querySelector('.carousel-btn.prev');
         let index = 0;
