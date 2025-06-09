@@ -219,22 +219,23 @@
     </footer>
     <script>
         const track = document.querySelector('.carousel-track');
+        const items = document.querySelectorAll('.carousel-item');
         const nextButton = document.querySelector('.carousel-btn.next');
         const prevButton = document.querySelector('.carousel-btn.prev');
         let index = 0;
 
         function updateCarousel() {
-            const width = document.querySelector('.carousel-item').offsetWidth + 20;
+            const width = items[0].offsetWidth + 20; // +20 pour la marge
             track.style.transform = `translateX(-${index * width}px)`;
         }
 
         nextButton.addEventListener('click', () => {
-            if (index < track.children.length - 1) index++;
+            index = (index + 1) % items.length;
             updateCarousel();
         });
 
         prevButton.addEventListener('click', () => {
-            if (index > 0) index--;
+            index = (index - 1 + items.length) % items.length;
             updateCarousel();
         });
 
