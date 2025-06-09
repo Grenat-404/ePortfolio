@@ -356,8 +356,8 @@ footer .social-icons a:hover {
 }
 
 footer .social-icons img {
-    width: 60%;              /* ajuste la taille à l’intérieur du cercle */
-    height: 60%;
+    width: 80%;       /* augmente la taille */
+    height: 80%;
     object-fit: contain;
     border-radius: 50%;
 }
