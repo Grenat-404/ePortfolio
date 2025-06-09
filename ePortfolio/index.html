@@ -69,22 +69,32 @@
             </div>
         </section>
 
-        <section>
-            <div id="Projets">
-                <h2><a href="projets.html">Projets</a></h2>
-                <ul>
-                    <a class="texte" href="projets.html">
-                        <li>Site web Curriculum Vitae</li>
+        <section id="carousel-projets">
+            <h2>Mes projets</h2>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <a href="Proj_CV.html" class="carousel-item">
+                        <img src="Images/CV_flou.png" alt="Site web CV">
+                        <h3>Site web CV</h3>
                     </a>
-                    <a class="texte" href="projets.html">
-                        <li>Dispositif de transmission</li>
+                    <a href="Proj_baie.html" class="carousel-item">
+                        <img src="Images/Proj_baie.jpg" alt="Dispositif de transmission">
+                        <h3>Transmission réseau</h3>
                     </a>
-                    <a class="texte" href="projets.html">
-                        <li>[ ... ]</li>
+                    <a href="Proj_cam.html" class="carousel-item">
+                        <img src="Images/Proj_cam.png" alt="Outil données">
+                        <h3>Outil de traitement</h3>
                     </a>
-                </ul>
+                    <a href="Proj_hyg.html" class="carousel-item">
+                        <img src="Images/Proj_hyg.png" alt="Hygiène info">
+                        <h3>Hygiène informatique</h3>
+                    </a>
+                </div>
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
             </div>
         </section>
+
 
         <section>
             <div id="Diplome">
@@ -207,6 +217,30 @@
             <p>&copy; 2025 - DEJOIE Matthieu. Tous droits réservés.</p>
         </div>
     </footer>
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const nextButton = document.querySelector('.carousel-btn.next');
+        const prevButton = document.querySelector('.carousel-btn.prev');
+        let index = 0;
+
+        function updateCarousel() {
+            const width = document.querySelector('.carousel-item').offsetWidth + 20;
+            track.style.transform = `translateX(-${index * width}px)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (index < track.children.length - 1) index++;
+            updateCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (index > 0) index--;
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+    </script>
+
 </body>
 
 </html>
