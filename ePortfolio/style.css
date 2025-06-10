@@ -1298,7 +1298,7 @@ pre code {
 /* Timeline cards */
 .timeline-card {
     background-color: #53354A;
-    color: #333;
+    color: #ffffff;
     border-radius: 20px;
     padding: 20px;
     width: 280px; /* largeur réduite */
